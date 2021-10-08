@@ -1,0 +1,24 @@
+<template>
+  <div class="green">
+    hello {{ name }} !
+  </div>
+</template>
+
+<script>
+
+export default {
+  initData() {
+    return {
+      name: "San.js",
+      date: new Date().toLocaleDateString(),
+    };
+  }
+};
+</script>
+
+<style lang="less">
+.green {
+  color: red;
+  font-size: 1 + 2px;
+}
+</style>

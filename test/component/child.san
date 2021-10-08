@@ -1,0 +1,15 @@
+<template>
+  <div class="red">
+    hello {{ name }} !
+  </div>
+</template>
+
+<script>
+export default {
+  initData() {
+    return {
+      date: new Date().toLocaleDateString(),
+    };
+  }
+};
+</script>

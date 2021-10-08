@@ -1,0 +1,39 @@
+<template>
+  <div class="red">
+    hello {{ name }} !
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  initData() {
+    return {
+      name: "San.js",
+      date: new Date().toLocaleDateString(),
+    };
+  },
+  inited() {
+    console.log(this.data.get("date"));
+    axios.get("http://baidu.com").then((res) => {
+      console.log(res);
+    }).catch((err) => {
+      // console.log('axios 请求错误');
+    });
+  },
+};
+</script>
+
+<style>
+.red {
+  color: red;
+  font-size: 1 + 2px;
+}
+
+.logo {
+  height: 300px;
+  display: block;
+  margin: 0 auto;
+}
+</style>

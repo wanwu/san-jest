@@ -1,0 +1,20 @@
+<template>
+  <div class="red">
+    hello {{ name }} !
+
+    <child name="{{child}}"></child>
+  </div>
+</template>
+
+<script>
+import child from './child.san';
+
+export default {
+  initData() {
+    return {
+      name: "parent",
+      child: "child"
+    };
+  }
+};
+</script>

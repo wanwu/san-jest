@@ -1,0 +1,17 @@
+<template>
+    <div>
+        {{name}} component
+    </div>
+</template>
+
+<script>
+import { Component } from "san";
+
+export default class klass extends Component {
+  initData() {
+    return {
+      name: "class component",
+    };
+  }
+}
+</script>
