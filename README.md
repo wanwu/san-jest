@@ -7,7 +7,7 @@ san-jest 是一个 .san 文件的 jest 转换器。
 首先安装依赖，直接 `npm i` 即可。其中主要有这几个必须的：
 
 ```shell
-npm i san san-test-utils jest @babel/core babel-jest
+npm i san san-jest san-test-utils jest @babel/core babel-jest
 ```
 
 其他的可以根据需要自行安装
