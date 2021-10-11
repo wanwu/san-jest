@@ -1,7 +1,14 @@
 {
   "compilerOptions": {
-    "module": "ESNext"
+    "module": "ESNext",
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"],
+      "~~/*": ["./*"],
+      "@@/*": ["./*"]
+    },
+    "moduleResolution": "node"
   },
-  "include": ["**/*.ts", "**/*.san"],
-  "exclude": ["node_modules", "dist"],
+  "include": ["**/*.ts", "**/*.san", "test.spec.js"],
+  "exclude": ["node_modules", "dist"]
 }
