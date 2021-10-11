@@ -6,6 +6,7 @@ import klass from "./component/klass.san";
 import jsc from "./component/js-comp";
 import { mount } from "san-test-utils";
 import tsComp from "./component/ts-comp";
+import normalTSfile from "./component/normal-ts";
 
 test("normal .san file", () => {
   const wrapper = mount(normal);
@@ -41,4 +42,8 @@ test(".san exits", () => {
 test("ts .san file", () => {
   const wrapper = mount(tsComp);
   expect(wrapper.data("count")).toEqual(0);
+});
+
+test("normal ts test case", () => {
+  expect(normalTSfile.foo).toEqual(2);
 });
