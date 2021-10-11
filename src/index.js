@@ -18,7 +18,7 @@ const { getSanJestConfig } = require("./utils");
 module.exports = {
   process(_, filename, config) {
     const sanConfig = getSanJestConfig(config);
-    const rollupConfig = sanConfig.rollupConfig;
+    const rollupConfig = sanConfig['rollup-config-path'];
     const midname = "index"; // hash(filename);
 
     const input = path.join(process.cwd(), `.cache/${midname}.src.js`);

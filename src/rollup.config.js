@@ -12,7 +12,6 @@ const path = require("path");
 const PostCSS = require("rollup-plugin-postcss");
 const SanPlugin = require("rollup-plugin-san");
 const typescript = require("rollup-plugin-typescript2");
-const { uglify } = require("rollup-plugin-uglify");
 const commonjs = require("@rollup/plugin-commonjs");
 const replace = require("@rollup/plugin-replace");
 const image = require("@rollup/plugin-image");
@@ -41,7 +40,6 @@ module.exports = [
       typescript({
         tsconfig: path.resolve(__dirname, "tsconfig.json"),
       }),
-      uglify(),
       image(),
       PostCSS(),
       replace({
