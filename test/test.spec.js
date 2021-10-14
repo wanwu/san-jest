@@ -1,16 +1,17 @@
+import { mount } from "san-test-utils";
 import normal from "./component/normal.san";
 import ts from "./component/ts.san";
 import less from "./component/less.san";
 import parent from "./component/parent.san";
 import klass from "./component/klass.san";
 import jsc from "./component/js-comp";
-import { mount } from "san-test-utils";
 import tsComp from "./component/ts-comp";
 import normalTSfile from "./component/normal-ts";
 
 test("normal .san file", () => {
   const wrapper = mount(normal);
   expect(wrapper.data("name")).toEqual("San.js");
+  expect(wrapper.data("$style").red).toBe("_red_1u6l3_1");
 });
 
 test("typescript .san file", () => {
