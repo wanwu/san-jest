@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="{{$style.red}}">
         {{name}} component
     </div>
 </template>
@@ -15,3 +15,9 @@ export default class klass extends Component {
   }
 }
 </script>
+
+<style lang="less" module>
+.red {
+  color: red;
+}
+</style>

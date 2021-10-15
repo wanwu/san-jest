@@ -1,6 +1,6 @@
 {
   "name": "san-jest",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "san sfc jest support",
   "main": "src/index.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-postcss": "^4.0.1",
-    "rollup-plugin-san": "^1.0.3",
+    "rollup-plugin-san": "^1.0.4",
     "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-uglify": "^6.0.4",
     "san": "^3.10.10",
