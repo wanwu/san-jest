@@ -2,7 +2,7 @@
   <div class="red">
     hello {{ name }} !
 
-    <child name="{{child}}"></child>
+    <child name="{{childname}}"></child>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   initData() {
     return {
       name: "parent",
-      child: "child"
+      childname: "child"
     };
   }
 };

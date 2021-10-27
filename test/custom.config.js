@@ -14,10 +14,10 @@ const deps = Object.keys(pkg.dependencies).map((key) => ({
 
 module.exports = [
   {
-    input: ".cache/index.src.js",
+    input: process.env.SRC,
     output: {
       exports: "auto",
-      file: ".cache/index.dist.js",
+      file: process.env.DIST,
       format: "cjs",
       sourcemap: false,
       globals: deps,
