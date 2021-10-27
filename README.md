@@ -41,10 +41,10 @@ npm i san san-jest san-test-utils jest @babel/core babel-jest
 
 ```js
 {
-    input: ".cache/index.src.js",
+    input: process.env.SRC,
     output: {
         exports: "auto",
-        file: ".cache/index.dist.js",
+        file: process.env.DIST,
         format: "cjs",
         sourcemap: false,
         globals: {
