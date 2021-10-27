@@ -4,8 +4,8 @@
  * This source code is licensed under the MIT license.
  * See LICENSE file in the project root for license information.
  *
- * @file index.js
- * @description 入口
+ * @file utils.js
+ * @description 工具
  */
 
 exports.getSanJestConfig = function getSanJestConfig(jestConfig) {
@@ -17,3 +17,7 @@ exports.getSanJestConfig = function getSanJestConfig(jestConfig) {
     {}
   );
 };
+
+exports.merge = function (defaultOptions, customOptions) {
+  return Object.assign({}, defaultOptions, customOptions);
+}

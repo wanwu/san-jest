@@ -11,15 +11,16 @@
 const path = require("path");
 const { execSync } = require("child_process");
 const fs = require("fs-extra");
-// const hash = require("hash-sum");
+const hash = require("hash-sum");
 
 const { getSanJestConfig } = require("./utils");
 
 module.exports = {
   process(_, filename, config) {
+    const midname = hash(filename);
+
     const sanConfig = getSanJestConfig(config);
     const rollupConfig = sanConfig['rollup-config-path'];
-    const midname = "index"; // hash(filename);
 
     const input = path.join(process.cwd(), `.cache/${midname}.src.js`);
     const output = path.join(process.cwd(), `.cache/${midname}.dist.js`);
@@ -32,9 +33,8 @@ module.exports = {
     const configPath = rollupConfig
       ? path.resolve(process.cwd(), rollupConfig)
       : path.resolve(__dirname, "rollup.config.js");
-    
     // 同步执行 rollup 
-    execSync(`rollup -c ${configPath}`);
+    execSync(`SRC=.cache/${midname}.src.js DIST=.cache/${midname}.dist.js rollup -c ${configPath}`);
 
     return {
       code: fs.readFileSync(output, "utf-8"),

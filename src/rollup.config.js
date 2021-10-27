@@ -11,7 +11,7 @@
 const path = require("path");
 const PostCSS = require("rollup-plugin-postcss");
 const SanPlugin = require("rollup-plugin-san");
-const typescript = require("rollup-plugin-typescript2");
+const typescript = require("@rollup/plugin-typescript");
 const commonjs = require("@rollup/plugin-commonjs");
 const replace = require("@rollup/plugin-replace");
 const image = require("@rollup/plugin-image");
@@ -19,10 +19,10 @@ const NodeResolve = require("@rollup/plugin-node-resolve").default;
 
 module.exports = [
   {
-    input: ".cache/index.src.js",
+    input: process.env.SRC,
     output: {
       exports: "auto",
-      file: ".cache/index.dist.js",
+      file: process.env.DIST,
       format: "cjs",
       sourcemap: false,
       globals: {
@@ -38,7 +38,7 @@ module.exports = [
         esModule: true,
       }),
       typescript({
-        tsconfig: path.resolve(__dirname, "tsconfig.json"),
+        tsconfig: path.resolve(process.cwd(), "tsconfig.json"),
       }),
       image(),
       PostCSS(),
