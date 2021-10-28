@@ -1,6 +1,6 @@
 {
   "name": "san-jest",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "san sfc jest support",
   "main": "src/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vanishcode/san-jest.git"
+    "url": "git+https://github.com/wanwu/san-jest.git"
   },
   "dependencies": {
     "@babel/core": "^7.15.5",
