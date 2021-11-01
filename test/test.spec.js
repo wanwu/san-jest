@@ -1,50 +1,51 @@
-import { mount } from "san-test-utils";
-import normal from "./component/normal.san";
-import ts from "./component/ts.san";
-import less from "./component/less.san";
-import parent from "./component/parent.san";
-import klass from "./component/klass.san";
-import jsc from "./component/js-comp";
-import tsComp from "./component/ts-comp";
-import normalTSfile from "./component/normal-ts";
+import { mount } from 'san-test-utils';
+// components
+import normal from './component/normal.san';
+import ts from './component/ts.san';
+import less from './component/less.san';
+import parent from './component/parent.san';
+import klass from './component/klass.san';
+import jsc from './component/js-comp';
+import tsComp from './component/ts-comp';
+import normalTSfile from './component/normal-ts';
 
-test("normal .san file", () => {
+test('normal .san file', () => {
   const wrapper = mount(normal);
-  expect(wrapper.data("name")).toEqual("San.js");
-  expect(wrapper.data("$style").red).toBe("_red_1u6l3_1");
+  expect(wrapper.data('name')).toEqual('San.js');
+  expect(wrapper.data('$style').red).toBe('_red_1u6l3_1');
 });
 
-test("typescript .san file", () => {
+test('typescript .san file', () => {
   const wrapper = mount(ts);
-  expect(wrapper.data("name")).toEqual("San.js");
+  expect(wrapper.data('name')).toEqual('San.js');
 });
 
-test("less .san file", () => {
+test('less .san file', () => {
   const wrapper = mount(less);
-  expect(wrapper.classes()).toContain("green");
+  expect(wrapper.classes()).toContain('green');
 });
 
-test("parent.san & child.san exits", () => {
+test('parent.san & child.san exits', () => {
   const wrapper = mount(parent);
   expect(wrapper.isSanInstance()).toBe(true);
 });
 
-test("class component .san test", () => {
+test('class component .san test', () => {
   const wrapper = mount(klass);
   expect(wrapper.isSanInstance()).toBe(true);
-  expect(wrapper.data("name")).toEqual("class component");
+  expect(wrapper.data('name')).toEqual('class component');
 });
 
-test(".san exits", () => {
+test('.san exits', () => {
   const wrapper = mount(jsc);
   expect(wrapper.exists()).toBe(true);
 });
 
-test("ts .san file", () => {
+test('ts .san file', () => {
   const wrapper = mount(tsComp);
-  expect(wrapper.data("count")).toEqual(0);
+  expect(wrapper.data('count')).toEqual(0);
 });
 
-test("normal ts test case", () => {
+test('normal ts test case', () => {
   expect(normalTSfile.foo).toEqual(2);
 });
