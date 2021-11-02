@@ -17,10 +17,6 @@ export default function (
 
   const scriptFromExternalSrc = scriptResult && scriptResult.externalSrc;
 
-  console.log(scriptResult);
-
-  // If script uses external file for content (using the src attribute) then
-  // map result to this file, instead of original.
   const srcContent = scriptFromExternalSrc ? scriptResult.externalSrc : src;
 
   map.setSourceContent(file, srcContent);
