@@ -2,7 +2,7 @@
 
 > san-jest 是一个 .san 文件的 jest 转换器。
 
-项目部分代码来自 [@vue/vue2-jest@27](https://github.com/vuejs/san-jest)
+项目部分代码来自 [@vue/vue2-jest@27](https://github.com/vuejs/vue-jest)
 
 ## 特性
 

@@ -1721,7 +1721,7 @@
   dependencies:
     "ms" "^2.1.1"
 
-"debug@^4.1.0", "debug@^4.1.1", "debug@^4.3.2", "debug@4":
+"debug@^4.1.0", "debug@^4.1.1", "debug@4":
   "integrity" "sha1-8KScGKyHeeMdSgxgKd+3aHPHQos="
   "resolved" "https://registry.nlark.com/debug/download/debug-4.3.2.tgz"
   "version" "4.3.2"
@@ -1983,15 +1983,6 @@
     "combined-stream" "^1.0.8"
     "mime-types" "^2.1.12"
 
-"fs-extra@^10.0.0":
-  "integrity" "sha1-n/YbZV3eU/s0qC34S7IUzoAuF8E="
-  "resolved" "https://registry.nlark.com/fs-extra/download/fs-extra-10.0.0.tgz"
-  "version" "10.0.0"
-  dependencies:
-    "graceful-fs" "^4.2.0"
-    "jsonfile" "^6.0.1"
-    "universalify" "^2.0.0"
-
 "fs.realpath@^1.0.0":
   "integrity" "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
   "resolved" "https://registry.npm.taobao.org/fs.realpath/download/fs.realpath-1.0.0.tgz"
@@ -2060,7 +2051,7 @@
   "resolved" "https://registry.npmmirror.com/globals/download/globals-11.12.0.tgz?cache=0&sync_timestamp=1635390798667&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fglobals%2Fdownload%2Fglobals-11.12.0.tgz"
   "version" "11.12.0"
 
-"graceful-fs@^4.1.2", "graceful-fs@^4.1.6", "graceful-fs@^4.2.0", "graceful-fs@^4.2.4":
+"graceful-fs@^4.1.2", "graceful-fs@^4.2.4":
   "integrity" "sha1-5BK40z9eAGWTy9PO5t+fLOu+gCo="
   "resolved" "https://registry.nlark.com/graceful-fs/download/graceful-fs-4.2.8.tgz"
   "version" "4.2.8"
@@ -2797,15 +2788,6 @@
   "version" "2.2.0"
   dependencies:
     "minimist" "^1.2.5"
-
-"jsonfile@^6.0.1":
-  "integrity" "sha1-vFWyY0eTxnnsZAMJTrE2mKbsCq4="
-  "resolved" "https://registry.npm.taobao.org/jsonfile/download/jsonfile-6.1.0.tgz?cache=0&sync_timestamp=1604161912962&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjsonfile%2Fdownload%2Fjsonfile-6.1.0.tgz"
-  "version" "6.1.0"
-  dependencies:
-    "universalify" "^2.0.0"
-  optionalDependencies:
-    "graceful-fs" "^4.1.6"
 
 "jstransformer@1.0.0":
   "integrity" "sha1-7Yvwkh4vPx7U1cGkT2hwntJHIsM="
@@ -3625,6 +3607,11 @@
   "resolved" "https://registry.npm.taobao.org/source-map/download/source-map-0.6.1.tgz"
   "version" "0.6.1"
 
+"source-map@0.5.6":
+  "integrity" "sha1-dc449SvwczxafwwRjYEzSiu19BI="
+  "resolved" "https://registry.npm.taobao.org/source-map/download/source-map-0.5.6.tgz"
+  "version" "0.5.6"
+
 "sprintf-js@~1.0.2":
   "integrity" "sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw="
   "resolved" "https://registry.npm.taobao.org/sprintf-js/download/sprintf-js-1.0.3.tgz"
@@ -3854,11 +3841,6 @@
   "integrity" "sha1-tkb2m+OULavOzJ1mOcgNwQXvqmY="
   "resolved" "https://registry.npm.taobao.org/universalify/download/universalify-0.1.2.tgz"
   "version" "0.1.2"
-
-"universalify@^2.0.0":
-  "integrity" "sha1-daSYTv7cSwiXXFrrc/Uw0C3yVxc="
-  "resolved" "https://registry.npm.taobao.org/universalify/download/universalify-2.0.0.tgz"
-  "version" "2.0.0"
 
 "urix@^0.1.0":
   "integrity" "sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI="

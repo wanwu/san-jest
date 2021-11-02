@@ -6,9 +6,8 @@ const babelJest = require('babel-jest').default;
 import processTemplate from './processTemplate';
 import processScript from './processScript';
 import processStyle from './processStyle';
-// import generateSourceMap from './sourcemap';
+import generateSourceMap from './sourcemap';
 import generateCode from './gencode';
-// import { getSanJestConfig } from './utils';
 
 import type { JestConfig } from './types';
 
@@ -28,19 +27,14 @@ export default {
     const stylesResult = processStyle(styles, filename, config);
 
     // gen runtime code
-    const output = generateCode(templateResult, scriptResult, stylesResult);
+    const { code } = generateCode(templateResult, scriptResult, stylesResult);
 
     // generate source map
-    // const map = generateSourceMap(scriptResult, src, filename).toJSON();
+    const map = generateSourceMap(scriptResult, src, filename).toJSON();
 
     return {
-      code: output.code,
-      map: {
-        mappings: '',
-        names: [],
-        sources: [],
-        version: 3,
-      },
+      code,
+      map,
     };
   },
   getCacheKey(

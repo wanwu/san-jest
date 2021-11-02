@@ -1,5 +1,5 @@
 import path from 'path';
-import sourceMap from 'source-map';
+const sourceMap = require('source-map');
 
 const splitRE = /\r?\n/g;
 
