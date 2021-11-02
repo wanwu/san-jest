@@ -26,7 +26,7 @@ export default (
     if (templateResult.compileANode) {
       output += `${namespace}.${templateResult.compileANode} = ${templateResult.code};\n`;
     } else if (typeof templateResult.code === 'string') {
-      output += `${namespace}.template = \`${templateResult.code}\`;\n`;
+      output += `${namespace}.template = ${templateResult.code};\n`;
     }
   }
 
