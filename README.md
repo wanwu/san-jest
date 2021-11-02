@@ -8,6 +8,12 @@
 
 1. 支持 css modules
 
+2. 自定义所有模块的编译选项
+
+3. 目前可以结合 webpack
+
+4. 无硬性依赖
+
 ## 使用
 
 首先安装依赖，直接 `npm i` 即可：
@@ -35,6 +41,9 @@ yarn
     },
     "globals": {
         "san-jest": {
+            "templateCompileOptions": {},
+            "styleCompileOptions": {},
+            "scriptCompileOptions": {}
         }
     }
 },
@@ -42,18 +51,17 @@ yarn
 
 ## 选项
 
-| 方法 / 属性 | 描述                          | 类型    |
-| ----------- | ----------------------------- | ------- |
-| source      | 源码                          | string  |
-| filename    | 文件名                        | string  |
-| sourceRoot  | sourcemap 选项                | string  |
-| needMap     | sourcemap 开关（template 没有 | boolean |
+| 方法 / 属性            | 描述                    | 类型   |
+| ---------------------- | ----------------------- | ------ |
+| templateCompileOptions | san-sfc-compiler 的选项 | Object |
+| styleCompileOptions    | 同上                    | Object |
+| scriptCompileOptions   | 同上                    | Object |
 
 ## 说明
 
-1. 因厂内规范，暂不支持 sass / scss / stylus（有需要再支持）
+1. sass / scss / stylus 目前支持不完善，它们的 `@import` 语法有可能会有问题
 
-2. 关于 scoped css，因为 san-test-utils 无法获取组件生成的 html 中的 css 代码，所以测试用例可能无效
+2. 关于 scoped css，因为 san-test-utils 无法获取组件生成的 html 中的 css 代码，所以你的测试用例可能无效
 
 ## 协议
 

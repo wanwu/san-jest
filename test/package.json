@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "jest .san file support test cases",
   "scripts": {
-    "pretest": "jest --clearCache",
-    "test": "jest"
+    "test": "jest --no-cache"
   },
   "jest": {
     "preset": "ts-jest",
