@@ -23,7 +23,6 @@ export default (
     source: template.content,
     filename: filename,
     preprocessLang: template.lang,
-    preprocessOptions: sanJestConfig[template.lang as string],
     ...userOptions,
   });
 

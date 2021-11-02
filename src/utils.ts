@@ -1,15 +1,13 @@
 import path from 'path';
 import fs from 'fs';
-import chalk from 'chalk';
-import { loadPartialConfig } from '@babel/core';
 
+import { loadPartialConfig } from '@babel/core';
 import type { Config } from '@jest/types';
 
 export interface JestConfig {
   config: Config.DefaultOptions;
   [key: string]: any;
 }
-const constants = require('./constants');
 
 const fetchTransformer = function fetchTransformer(key: string, obj: any) {
   for (const exp in obj) {
@@ -27,14 +25,6 @@ export const resolvePath = function resolvePath(pathToResolve: string) {
     : pathToResolve;
 };
 
-export const info = function info(msg: string) {
-  console.info(chalk.blue('\n[san-jest]: ' + msg + '\n'));
-};
-
-export const warn = function warn(msg: string) {
-  console.warn(chalk.red('\n[san-jest]: ' + msg + '\n'));
-};
-
 export const transformContent = function transformContent(
   content: string,
   filePath: string,
@@ -48,7 +38,7 @@ export const transformContent = function transformContent(
   try {
     return transformer(content, filePath, config, attrs);
   } catch (err) {
-    warn(`There was an error while compiling ${filePath} ${err}`);
+    throwError(`There was an error while compiling ${filePath} ${err}`);
   }
   return content;
 };
@@ -107,8 +97,6 @@ export const getCustomTransformer = function getCustomTransformer(
   transform = {},
   lang: string
 ) {
-  transform = { ...constants.defaultsanJestConfig.transform, ...transform };
-
   const transformerPath = fetchTransformer(lang, transform);
 
   if (!transformerPath) {

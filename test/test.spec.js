@@ -12,7 +12,7 @@ import normalTSfile from './component/normal-ts';
 test('normal .san file', () => {
   const wrapper = mount(normal);
   expect(wrapper.data('name')).toEqual('San.js');
-  expect(wrapper.data('$style').red).toBe('_red_1u6l3_1');
+  expect(wrapper.data('$style').red).toBe('red');
 });
 
 test('typescript .san file', () => {

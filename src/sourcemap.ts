@@ -17,6 +17,8 @@ export default function (
 
   const scriptFromExternalSrc = scriptResult && scriptResult.externalSrc;
 
+  console.log(scriptResult);
+
   // If script uses external file for content (using the src attribute) then
   // map result to this file, instead of original.
   const srcContent = scriptFromExternalSrc ? scriptResult.externalSrc : src;
@@ -25,7 +27,7 @@ export default function (
   if (scriptResult) {
     let inputMapConsumer =
       scriptResult.map && new sourceMap.SourceMapConsumer(scriptResult.map);
-    scriptResult.code.split(splitRE).forEach(function (line, index) {
+    scriptResult.code.split(splitRE).forEach(function (_, index) {
       let ln = index + 1;
       let originalLine = inputMapConsumer
         ? inputMapConsumer.originalPositionFor({ line: ln, column: 0 }).line

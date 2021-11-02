@@ -14,7 +14,7 @@ import type { JestConfig } from './types';
 function getTransformer(lang = 'js', sanJestConfig: JestConfig) {
   const transformer = getCustomTransformer(sanJestConfig['transform'], lang);
   if (/^typescript$|ts$/.test(lang)) {
-    return transformer || require('./transformTs');
+    return transformer || require('./transformTs').default;
   } else {
     return transformer || babelTransformer;
   }
@@ -29,10 +29,8 @@ export default (
     return null;
   }
 
-  let externalSrc = null;
   if (scriptPart.src) {
     scriptPart.content = loadSrc(scriptPart.src, filePath);
-    externalSrc = scriptPart.content;
   }
 
   const sanJestConfig = getSanJestConfig(config);
@@ -40,7 +38,6 @@ export default (
 
   const result = transformer.process(scriptPart.content, filePath, config);
   result.code = stripInlineSourceMap(result.code);
-  result.externalSrc = externalSrc;
-  
+
   return result;
 };
