@@ -15,6 +15,9 @@ export default {
       name: "parent",
       childname: "child"
     };
+  },
+  components: {
+    child
   }
 };
 </script>

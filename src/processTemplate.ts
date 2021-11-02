@@ -21,9 +21,13 @@ export default (
   const result = compileTemplate({
     source: template.content,
     filename: filename,
+    compileANode: template.attrs.compileANode,
     preprocessLang: template.lang,
     ...userOptions,
   });
+  // for template aNode aPack
+  result.code = JSON.stringify(result.code);
+  result['compileANode'] = template.attrs.compileANode;
 
   return result;
 };

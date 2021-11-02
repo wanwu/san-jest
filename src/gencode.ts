@@ -23,7 +23,11 @@ export default (
     `: exports.default\n`;
 
   if (templateResult) {
-    output += `${namespace}.template = \`${templateResult.code}\`;\n`;
+    if (templateResult.compileANode) {
+      output += `${namespace}.${templateResult.compileANode} = ${templateResult.code};\n`;
+    } else if (typeof templateResult.code === 'string') {
+      output += `${namespace}.template = \`${templateResult.code}\`;\n`;
+    }
   }
 
   if (stylesResult) {
