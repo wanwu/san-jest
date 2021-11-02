@@ -1,13 +1,11 @@
-const babelJest = require('babel-jest').default;
 import typescript from 'typescript';
+const babelJest = require('babel-jest').default;
 
-import { ensureRequireModule } from './utils';
-
+import { getTsJestConfig, getSanJestConfig } from './config';
 import {
-  getTsJestConfig,
+  ensureRequireModule,
   stripInlineSourceMap,
   getCustomTransformer,
-  getSanJestConfig,
 } from './utils';
 
 export default {

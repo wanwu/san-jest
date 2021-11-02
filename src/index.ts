@@ -9,7 +9,7 @@ import processStyle from './processStyle';
 import generateSourceMap from './sourcemap';
 import generateCode from './gencode';
 
-import type { JestConfig } from './types';
+import { JestConfig } from './utils';
 
 export default {
   process: function (src: string, filename: string, config: JestConfig) {

@@ -1,8 +1,7 @@
 import { SFCBlock, compileTemplate } from 'san-sfc-compiler';
 
-import { getSanJestConfig, loadSrc } from './utils';
-
-import type { JestConfig } from './types';
+import { getSanJestConfig } from './config';
+import { loadSrc, JestConfig } from './utils';
 
 export default (
   template: SFCBlock | null,

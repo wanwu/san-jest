@@ -1,5 +1,5 @@
 import path from 'path';
-const sourceMap = require('source-map');
+const sourceMap = require('source-map'); // lock version
 
 const splitRE = /\r?\n/g;
 

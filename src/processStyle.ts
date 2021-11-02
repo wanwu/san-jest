@@ -1,9 +1,8 @@
 import { SFCBlock, compileStyle } from 'san-sfc-compiler';
 const cssExtract = require('extract-from-css');
 
-import { getSanJestConfig, loadSrc } from './utils';
-
-import type { JestConfig } from './types';
+import { getSanJestConfig } from './config';
+import { loadSrc, JestConfig } from './utils';
 
 function extractClassMap(cssCode: string) {
   const cssNames = cssExtract.extractClasses(cssCode);

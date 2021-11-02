@@ -2,14 +2,13 @@ import { SFCBlock } from 'san-sfc-compiler';
 
 const babelTransformer = require('babel-jest').default;
 
+import { getSanJestConfig } from './config';
 import {
-  getSanJestConfig,
   loadSrc,
   getCustomTransformer,
   stripInlineSourceMap,
+  JestConfig,
 } from './utils';
-
-import type { JestConfig } from './types';
 
 function getTransformer(lang = 'js', sanJestConfig: JestConfig) {
   const transformer = getCustomTransformer(sanJestConfig['transform'], lang);
