@@ -14,8 +14,8 @@
       "san"
     ],
     "transform": {
-      "^.+\\.js$": "babel-jest",
-      "^.+\\.san$": "san-jest"
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.san$": "<rootDir>/node_modules/san-jest"
     },
     "globals": {
       "san-jest": {
