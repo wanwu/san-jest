@@ -22,7 +22,6 @@ test('typescript .san file', () => {
 
 test('less .san file', () => {
   const wrapper = mount(less);
-  console.log(less, wrapper);
   expect(wrapper.classes()).toContain('green');
 });
 
