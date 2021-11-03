@@ -36,8 +36,8 @@ yarn
         "san"
     ],
     "transform": {
-        "^.+\\.js$": "babel-jest",
-        "^.+\\.san$": "san-jest"
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.san$": "<rootDir>/node_modules/san-jest"
     },
     "globals": {
         "san-jest": {
@@ -48,6 +48,8 @@ yarn
     }
 },
 ```
+
+这里有个注意的地方，需要写相对路径 `"^.+\\.san$": "<rootDir>/node_modules/san-jest"` 而不是直接 `san-jest`，覆盖率会统计不到 `.san` 文件。
 
 ## 选项
 
