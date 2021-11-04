@@ -4,7 +4,7 @@
 
 项目部分代码来自 [@vue/vue2-jest@27](https://github.com/vuejs/vue-jest)
 
-![test](http://bj.bcebos.com/ibox-thumbnail98/6f13c8cfc46dc1180c7266c93a49cfd4?authorization=bce-auth-v1%2Ffbe74140929444858491fbf2b6bc0935%2F2021-11-04T03%3A16%3A18Z%2F1800%2F%2F8559eccb379dd5aa0cfbf1751bc03692f50e1ae964e12ae1d56b2ad0d3ea1e01)
+![test](https://user-images.githubusercontent.com/20496444/140274524-0a19ffce-be6b-45f6-9ca0-d81c8668bcad.png)
 
 ## 特性
 
@@ -12,7 +12,7 @@
 
 2. 自定义所有模块的编译选项
 
-3. 目前可以结合 webpack
+3. 可以结合 webpack
 
 4. 无硬性依赖
 
@@ -43,13 +43,17 @@ yarn
     },
     "globals": {
         "san-jest": {
-            "templateCompileOptions": {},
+            "templateCompileOptions": {
+                "compileANode": "aNode" // 对全部 .san 文件生效
+            },
             "styleCompileOptions": {},
             "scriptCompileOptions": {}
         }
     }
 },
 ```
+
+san-jest 的选项见 👀 [san-sfc-compiler](https://github.com/wanwu/san-sfc-compiler)
 
 这里有个注意的地方，需要写相对路径 `"^.+\\.san$": "<rootDir>/node_modules/san-jest"` 而不是直接 `san-jest`，覆盖率会统计不到 `.san` 文件。
 
