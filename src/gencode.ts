@@ -32,19 +32,19 @@ export default (
 
   if (stylesResult) {
     const styleStr = (stylesResult as any[])
-      .map(
-        ({ code, moduleName }) =>
-          `if(!this.data.get('${moduleName}')) {\n` +
-          `  this.data.set('${moduleName}', {});\n` +
-          `}\n` +
-          `this.data.set('${moduleName}',Object.assign(\n` +
-          `this.data.get('${moduleName}'), ${code}));\n`
-      )
+      .map((code) => `$style = Object.assign($style, ${code});\n`)
       .join('');
 
-    output +=
-      `  var styleFn = function () { ${styleStr} }\n` +
-      `  ${namespace}.created = styleFn;\n`;
+    output += `
+    var origin = ${namespace}.initData;
+    ${namespace}.initData = origin
+    ? function () {
+        var $style = {};
+        ${styleStr}
+        return Object.assign({}, origin.call(this), {$style: $style});
+    } : function () {
+      return {$style: $style};
+    }`;
   }
 
   return {

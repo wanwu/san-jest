@@ -43,10 +43,7 @@ export default (
 
   const filteredStyles = styles
     .filter((style) => style.module)
-    .map((style) => ({
-      code: _processStyle(style, filename, config),
-      moduleName: style.module === true ? '$style' : style.module,
-    }));
+    .map((style) => _processStyle(style, filename, config));
 
   return filteredStyles.length ? filteredStyles : null;
 };
