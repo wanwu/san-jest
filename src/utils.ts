@@ -95,8 +95,8 @@ export const stripInlineSourceMap = function (str: string) {
 };
 
 export const loadSrc = (src: string, filePath: string) => {
-  var dir = path.dirname(filePath);
-  var srcPath = path.resolve(dir, src);
+  const dir = path.dirname(filePath);
+  const srcPath = path.resolve(dir, src);
   try {
     return fs.readFileSync(srcPath, 'utf-8');
   } catch (e) {
